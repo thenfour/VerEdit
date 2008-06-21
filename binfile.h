@@ -210,7 +210,7 @@ public:
   Result Write(const T* val)
   {
     Result ret;
-    size_t len = LibCC::XStringLength(val);
+    size_t len = LibCC::StringLength(val);
     // write length, then data.
     if(!(ret = InternalWrite(val, len)))
     {

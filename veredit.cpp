@@ -57,7 +57,7 @@ void ProcessDelete(Arg& a, Version::VersionResource& res)
         // make sure we don't invalidate this iterator.
         list<Version::String>::iterator itTemp = itS;
         ++ itS;// now this is safe.
-				if(StringEquals(itTemp->hdr.key, LibCC::ToUnicode(a.name)))
+				if(StringEquals(itTemp->hdr.key, LibCC::ToUTF16(a.name)))
         {
           itST->items.erase(itTemp);
           occurrences ++;
@@ -83,9 +83,9 @@ Result ProcessString(Arg& a, Version::VersionResource& res)
       for(list<Version::String>::iterator itS = itST->items.begin(); itS != itST->items.end(); ++ itS)
       {
         Version::String& s = *itS;
-        if(StringEquals(s.hdr.key, LibCC::ToUnicode(a.name)))
+        if(StringEquals(s.hdr.key, LibCC::ToUTF16(a.name)))
         {
-					ConvertString(s.value, a.value);
+					StringConvert(s.value, a.value);
           occurrences ++;
         }
       }
@@ -111,8 +111,8 @@ Result ProcessString(Arg& a, Version::VersionResource& res)
     }
     Version::StringTable& st = res.stringFileInfo.front().items.front();
     Version::String s;
-    ConvertString(s.value, a.value);
-    ConvertString(s.hdr.key, a.name);
+    StringConvert(s.value, a.value);
+    StringConvert(s.hdr.key, a.name);
     s.hdr.type = 1;
     st.items.push_back(s);
 

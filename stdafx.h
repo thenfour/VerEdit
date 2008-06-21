@@ -12,10 +12,10 @@
 // TODO: reference additional headers your program requires here
 #import "libid:D63E0CE2-A0A2-11D0-9C02-00C04FC99C8E"// MSXML
 
-#include "libcc\StringUtil.h"
-#include "libcc\Result.h"
-#include "libcc\Blob.h"
-#include "libcc\Winapi.h"
+#include "..\libcc\libcc\StringUtil.h"
+#include "..\libcc\libcc\Result.h"
+#include "..\libcc\libcc\Blob.h"
+#include "..\libcc\libcc\Winapi.h"
 #include <iostream>
 #include <string>
 #include <list>

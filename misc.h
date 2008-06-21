@@ -63,7 +63,7 @@ inline Result ParseBraketedXBaseString(const string& s, DWORD& out)
   }
   string inner = s.substr(1, s.length() - 2);// extract inner values
   vector<string> valueStrings;
-  LibCC::StringSplit(inner, " ", std::back_inserter(valueStrings));
+  LibCC::StringSplitByString(inner, " ", std::back_inserter(valueStrings));
   vector<DWORD> values;
   if(valueStrings.size() != 2 && valueStrings.size() != 4 && valueStrings.size() != 1)
   {

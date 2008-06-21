@@ -491,7 +491,7 @@ Error:
         ret.Fail(Format("Unsupported struct version.  Expected: 0x00010000, Actual: 0x%").ul<16,8>(structVersion).Str());
         goto Error;
       }
-      if(!XStringEquals(hdr.key, "VS_VERSION_INFO"))
+      if(!StringEquals(hdr.key, "VS_VERSION_INFO"))
       {
         ret.Fail(Format("The root key is incorrect.  Expected \"VS_VERSION_INFO\"; it is %").qs(hdr.key).Str());
         goto Error;
