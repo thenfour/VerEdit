@@ -5,29 +5,29 @@
 
 using namespace LibCC;
 
-Result CreateXMLHttpRequest(MSXML::IXMLHttpRequestPtr& p)
-{
-	Result r;
-
-	try
-	{
-		HRESULT hr;
-		if(FAILED(hr = p.CreateInstance("msxml2.xmlhttp")))
-		{
-			r.Fail(Format("Failed to create instance of msxml2.xmlhttp.  Error code: %").ul(hr).Str());
-		}
-		else
-		{
-			r.Succeed();
-		}
-	}
-	catch(_com_error& e)
-	{
-		r.Fail(Format("Error creating msxml2.xmlhttp. % %").s(e.ErrorMessage()).s(e.Description()).Str());
-	}
-
-	return r;
-}
+//Result CreateXMLHttpRequest(MSXML::IXMLHttpRequestPtr& p)
+//{
+//	Result r;
+//
+//	try
+//	{
+//		HRESULT hr;
+//		if(FAILED(hr = p.CreateInstance("msxml2.xmlhttp")))
+//		{
+//			r.Fail(Format("Failed to create instance of msxml2.xmlhttp.  Error code: %").ul(hr).Str());
+//		}
+//		else
+//		{
+//			r.Succeed();
+//		}
+//	}
+//	catch(_com_error& e)
+//	{
+//		r.Fail(Format("Error creating msxml2.xmlhttp. % %").s(e.ErrorMessage()).s(e.Description()).Str());
+//	}
+//
+//	return r;
+//}
 
 
 

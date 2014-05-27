@@ -4,7 +4,7 @@
 
 #pragma once
 
-LibCC::Result CreateXMLHttpRequest(MSXML::IXMLHttpRequestPtr& p);
+//LibCC::Result CreateXMLHttpRequest(MSXML::IXMLHttpRequestPtr& p);
 
 LibCC::Result XMLToString(string& s, MSXML::IXMLDOMNodePtr p);
 LibCC::Result StringToXML(MSXML::IXMLDOMDocumentPtr& p, const string& s);

@@ -486,9 +486,11 @@ Error:
         ret.Fail(Format("Magic number is incorrect. Expected 0xfeef04bd; it is 0x%").ul<16,8>(magicNumber).Str());
         goto Error;
       }
-      if(structVersion != 0x00010000)
+
+			// NSIS outputs a EXE with struct version 0x0; it works fine.
+      if((structVersion != 0x00010000) && (structVersion != 0x00000000))
       {
-        ret.Fail(Format("Unsupported struct version.  Expected: 0x00010000, Actual: 0x%").ul<16,8>(structVersion).Str());
+        ret.Fail(Format("Unsupported struct version.  Expected: 0x00010000 or 0x0, Actual: 0x%").ul<16,8>(structVersion).Str());
         goto Error;
       }
       if(!StringEquals(hdr.key, "VS_VERSION_INFO"))
